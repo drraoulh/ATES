@@ -1,0 +1,20 @@
+# Dependencies and production output
+node_modules/
+dist/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Logs and editor files
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local source-media copies; the application uses public/assets instead
+/assets/
+/WhatsApp Image *.jpeg
+/WhatsApp Video *.mp4
