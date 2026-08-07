@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Calculator, RadioTower, Box, Building, ShoppingCart, Hash, Ruler, Trees, Zap, MapPin } from 'lucide-react';
+import { Calculator, RadioTower, Box, Building, ShoppingCart, Hash, Ruler, Trees, Zap, MapPin, HardHat } from 'lucide-react';
 
 export default function QuoteSimulator() {
   const [projectType, setProjectType] = useState('ligne_ht');
@@ -7,6 +7,8 @@ export default function QuoteSimulator() {
   const [distanceLigne, setDistanceLigne] = useState(250);
   const [typePoteau, setTypePoteau] = useState('beton');
   const [puissanceTransfo, setPuissanceTransfo] = useState(100);
+  const [surfaceBtp, setSurfaceBtp] = useState(100);
+  const [typeOuvrageBtp, setTypeOuvrageBtp] = useState('cabine');
   const [ville, setVille] = useState('Douala');
   const [clientNom, setClientNom] = useState('');
   const [clientTel, setClientTel] = useState('');
@@ -20,18 +22,22 @@ export default function QuoteSimulator() {
       const transfoCost = puissanceTransfo * 35000 + 1500000;
       const unitPoteauCost = typePoteau === 'beton' ? 180000 : 110000;
       total = transfoCost + (nbPoteaux * unitPoteauCost) + (distanceLigne * 4500) + 800000;
+    } else if (projectType === 'btp') {
+      const costPerM2 = typeOuvrageBtp === 'cabine' ? 150000 : typeOuvrageBtp === 'fondation' ? 80000 : 120000;
+      total = (surfaceBtp * costPerM2) + 350000;
     } else if (projectType === 'batiment') {
       total = 850000;
     } else {
       total = 450000;
     }
     return total.toLocaleString('fr-FR') + ' FCFA';
-  }, [projectType, nbPoteaux, distanceLigne, typePoteau, puissanceTransfo]);
+  }, [projectType, nbPoteaux, distanceLigne, typePoteau, puissanceTransfo, surfaceBtp, typeOuvrageBtp]);
 
   const sendQuoteWhatsApp = () => {
     const typeMap = {
       'ligne_ht': 'Construction de Ligne Électrique HT/MT',
       'transfo': 'Poste & Transformateur Électrique',
+      'btp': 'Travaux de BTP & Génie Civil',
       'batiment': 'Électricité de Bâtiment / Usine',
       'materiel': 'Achat de Câbles / Matériel Électrique'
     };
@@ -49,11 +55,15 @@ export default function QuoteSimulator() {
     if (projectType === 'transfo') {
       msg += `🔌 *Puissance Transfo :* ${puissanceTransfo} kVA\n`;
     }
+    if (projectType === 'btp') {
+      msg += `🏗️ *Ouvrage BTP :* ${typeOuvrageBtp === 'cabine' ? 'Cabine de poste maçonné' : typeOuvrageBtp === 'fondation' ? 'Massifs & Fondations béton armé' : 'Terrassement, Tranchées & VRD'}\n`;
+      msg += `📐 *Surface / Étendue :* ${surfaceBtp} m²\n`;
+    }
 
     msg += `💰 *Estimation Indicative :* ${estimatedPrice}\n\n`;
     msg += `Merci de me contacter pour valider la visite technique et le devis final.`;
 
-    window.open(`https://wa.me/237600000000?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/237677764773?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
   return (
@@ -62,7 +72,7 @@ export default function QuoteSimulator() {
         <div className="quote-wrapper glass-panel">
           <div className="section-header text-center">
             <span className="sub-title"><Calculator size={16} /> SIMULATEUR EN LIGNE</span>
-            <h2>Estimez le Coût de Votre Projet Électrique</h2>
+            <h2>Estimez le Coût de Votre Projet Électrique & BTP</h2>
             <p>Obtenez une première estimation instantanée et envoyez votre cahier des charges directement sur WhatsApp.</p>
           </div>
 
@@ -89,6 +99,15 @@ export default function QuoteSimulator() {
                 </label>
 
                 <label className="option-card">
+                  <input type="radio" name="project_type" value="btp" checked={projectType === 'btp'} onChange={() => setProjectType('btp')} />
+                  <div className="card-content">
+                    <HardHat size={32} />
+                    <h4>BTP & Génie Civil</h4>
+                    <p>Fondations, cabines maçonnées, VRD & terrassement</p>
+                  </div>
+                </label>
+
+                <label className="option-card">
                   <input type="radio" name="project_type" value="batiment" checked={projectType === 'batiment'} onChange={() => setProjectType('batiment')} />
                   <div className="card-content">
                     <Building size={32} />
@@ -101,7 +120,7 @@ export default function QuoteSimulator() {
                   <input type="radio" name="project_type" value="materiel" checked={projectType === 'materiel'} onChange={() => setProjectType('materiel')} />
                   <div className="card-content">
                     <ShoppingCart size={32} />
-                    <h4>Achat de Matériel Électrique</h4>
+                    <h4>Achat de Matériel</h4>
                     <p>Commande de câbles, isolateurs ou quincaillerie</p>
                   </div>
                 </label>
@@ -148,6 +167,24 @@ export default function QuoteSimulator() {
                   </div>
                 )}
 
+                {projectType === 'btp' && (
+                  <>
+                    <div className="form-group">
+                      <label><HardHat size={16} /> Type d'ouvrage BTP / Génie Civil :</label>
+                      <select value={typeOuvrageBtp} onChange={e => setTypeOuvrageBtp(e.target.value)}>
+                        <option value="cabine">Cabine maçonnée pour poste électrique</option>
+                        <option value="fondation">Massifs & Fondations béton armé</option>
+                        <option value="vrd">Terrassement, Tranchées & VRD</option>
+                      </select>
+                    </div>
+
+                    <div className="form-group">
+                      <label><Ruler size={16} /> Surface estimée (m²) :</label>
+                      <input type="number" value={surfaceBtp} min="10" step="10" onChange={e => setSurfaceBtp(parseInt(e.target.value, 10) || 10)} />
+                    </div>
+                  </>
+                )}
+
                 <div className="form-group">
                   <label><MapPin size={16} /> Ville / Localisation du chantier :</label>
                   <input type="text" value={ville} onChange={e => setVille(e.target.value)} placeholder="Ex: Douala, Yaoundé..." />
@@ -162,7 +199,7 @@ export default function QuoteSimulator() {
                 <span className="badge-indicative">Valeur indicative</span>
               </div>
               <div className="result-price">{estimatedPrice}</div>
-              <p className="result-note">Comprend la fourniture indicative et la main d'œuvre aux normes Eneo.</p>
+              <p className="result-note">Comprend la fourniture indicative et la main d'œuvre aux normes en vigueur.</p>
             </div>
 
             <div className="contact-inputs-grid">

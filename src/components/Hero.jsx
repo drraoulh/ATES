@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ShieldCheck, FileSignature, PlayCircle, RadioTower, Zap, Handshake, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ShieldCheck, PlayCircle, RadioTower, Zap, Clock, HardHat, PhoneCall } from 'lucide-react';
 
 export default function Hero() {
   const [stats, setStats] = useState({ poles: 0, transfos: 0, eneoPercent: 0, hours: 0 });
@@ -30,27 +31,27 @@ export default function Hero() {
 
       <div className="container hero-content">
         <div className="hero-badge">
-          <ShieldCheck size={18} /> Entreprise de Référence - Sous-traitance Eneo
+          <ShieldCheck size={18} /> Entreprise de Référence - Électricité & BTP - Sous-traitance Eneo
         </div>
         
         <h1 className="hero-title">
-          L'Expertise Électrique <span className="text-gradient">Haute Tension</span> & Infras Réseaux au Cameroun
+          L'Expertise Électrique, <span className="text-gradient">Haute Tension & BTP</span> au Cameroun
         </h1>
 
         <p className="hero-subtitle">
-          Conception, pose de lignes HTA/BT avec postes de transformateurs, maintenance préventive, câblage industriel/bâtiment et fourniture certifiée de matériels électriques.
+          Bâtiment & Travaux Publics, pose de lignes HTA/BT avec postes de transformateurs, génie civil, maintenance préventive et fourniture de matériels électriques.
         </p>
 
         <div className="hero-cta-group">
-          <a href="#quote" className="btn btn-lg btn-primary">
-            <FileSignature size={20} /> Devis Gratuit Instantané
-          </a>
-          <a href="https://wa.me/237600000000?text=Bonjour%20ATES,%20je%20souhaite%20des%20informations%20sur%20vos%20services" target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-whatsapp">
+          <Link to="/contact" className="btn btn-lg btn-primary">
+            <PhoneCall size={20} /> Nous Contacter Directement
+          </Link>
+          <a href="https://wa.me/237677764773?text=Bonjour%20ATES,%20je%20souhaite%20des%20informations%20sur%20vos%20services" target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-whatsapp">
             <i className="fa-brands fa-whatsapp text-xl"></i> Échanger sur WhatsApp
           </a>
-          <a href="#gallery" className="btn btn-lg btn-outline">
+          <Link to="/realisations" className="btn btn-lg btn-outline">
             <PlayCircle size={20} /> Découvrir nos Chantiers
-          </a>
+          </Link>
         </div>
 
         {/* Stats Grid */}
@@ -74,11 +75,11 @@ export default function Hero() {
           </div>
 
           <div className="stat-card">
-            <div className="stat-icon"><Handshake size={24} /></div>
+            <div className="stat-icon"><HardHat size={24} /></div>
             <div className="stat-info">
-              <span className="stat-number">{stats.eneoPercent}</span>
-              <span className="plus">%</span>
-              <span className="stat-label">Conformité Normes Eneo</span>
+              <span className="stat-number">BTP</span>
+              <span className="plus">&</span>
+              <span className="stat-label">Génie Civil Infras & Réseaux</span>
             </div>
           </div>
 

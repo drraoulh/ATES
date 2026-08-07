@@ -1,5 +1,6 @@
 import React from 'react';
-import { Settings, TowerControl as Tower, Box, Cpu, PlugZap, Building2, ShoppingBag, ArrowRight, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Settings, TowerControl as Tower, Box, Cpu, PlugZap, Building2, ShoppingBag, HardHat, ArrowRight, ChevronRight } from 'lucide-react';
 
 export default function Services() {
   const servicesList = [
@@ -14,7 +15,7 @@ export default function Services() {
         "Plantations de poteaux béton & bois traités",
         "Armements et isolateurs verre/composite"
       ],
-      linkText: "Estimer ce projet"
+      linkText: "Contacter un expert"
     },
     {
       id: 2,
@@ -27,10 +28,23 @@ export default function Services() {
         "Cellules HTA et coffrets de distribution BT",
         "Mise en service & rapports d'essais"
       ],
-      linkText: "Estimer ce projet"
+      linkText: "Contacter un expert"
     },
     {
       id: 3,
+      title: "Génie Civil & BTP (Travaux Publics)",
+      image: "/assets/images/camion_grue_installation.jpg",
+      icon: <HardHat size={24} />,
+      desc: "Réalisation d'ouvrages de génie civil, massifs de fondation pour pylônes, cabines en maçonnerie, terrassement, tranchées VRD et construction de bâtiments.",
+      features: [
+        "Massifs & fondations béton armé pour postes",
+        "Tranchées, fourreaux & VRD réseaux souterrains",
+        "Construction & aménagement de bâtiments & cabines"
+      ],
+      linkText: "Demander une étude BTP"
+    },
+    {
+      id: 4,
       title: "Maintenance & Mesure de Terre (ES3000P)",
       image: "/assets/images/mesure_terre_es3000p.jpg",
       icon: <Cpu size={24} />,
@@ -43,7 +57,7 @@ export default function Services() {
       linkText: "Demander un contrôle"
     },
     {
-      id: 4,
+      id: 5,
       title: "Sous-traitance & Raccordement Eneo",
       image: "/assets/images/raccordement_ligne.jpg",
       icon: <PlugZap size={24} />,
@@ -56,7 +70,7 @@ export default function Services() {
       linkText: "Contacter un expert"
     },
     {
-      id: 5,
+      id: 6,
       title: "Électricité de Bâtiment & Industrie",
       image: "/assets/images/montage_armement.jpg",
       icon: <Building2 size={24} />,
@@ -66,10 +80,10 @@ export default function Services() {
         "Éclairage public & industriel LED",
         "Groupes électrogènes & inverseurs"
       ],
-      linkText: "Demander un devis"
+      linkText: "En savoir plus"
     },
     {
-      id: 6,
+      id: 7,
       title: "Vente de Câbles & Matériel Électrique",
       image: "/assets/images/equipe_ates.jpg",
       icon: <ShoppingBag size={24} />,
@@ -88,8 +102,8 @@ export default function Services() {
       <div className="container">
         <div className="section-header text-center">
           <span className="sub-title"><Settings size={16} /> NOTRE SAVOIR-FAIRE</span>
-          <h2>Des Solutions Électriques Globales & Certifiées</h2>
-          <p>De la haute tension HTA aux installations intérieures, ATES garantit rigueur, sécurité et fiabilité.</p>
+          <h2>Électricité Haute Tension, BTP & Génie Civil</h2>
+          <p>De la construction de réseaux électriques aux ouvrages de génie civil et BTP, ATES garantit rigueur, sécurité et fiabilité.</p>
         </div>
 
         <div className="services-grid">
@@ -107,9 +121,9 @@ export default function Services() {
                     <li key={idx}><ChevronRight size={16} className="text-green" /> {feat}</li>
                   ))}
                 </ul>
-                <a href="#quote" className="service-link">
+                <Link to="/contact" className="service-link">
                   {item.linkText} <ArrowRight size={16} />
-                </a>
+                </Link>
               </div>
             </div>
           ))}

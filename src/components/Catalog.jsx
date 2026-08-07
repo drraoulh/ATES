@@ -124,7 +124,7 @@ export default function Catalog() {
               </div>
               <div className="product-action">
                 <a 
-                  href={`https://wa.me/237600000000?text=${encodeURIComponent(prod.whatsappMsg)}`} 
+                  href={`https://wa.me/237677764773?text=${encodeURIComponent(prod.whatsappMsg)}`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="btn btn-sm btn-whatsapp"

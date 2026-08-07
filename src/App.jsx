@@ -11,7 +11,6 @@ import ServicesPage from './pages/ServicesPage';
 import EneoPage from './pages/EneoPage';
 import GalleryPage from './pages/GalleryPage';
 import CatalogPage from './pages/CatalogPage';
-import QuotePage from './pages/QuotePage';
 import ContactPage from './pages/ContactPage';
 
 export default function App() {
@@ -27,7 +26,6 @@ export default function App() {
             <Route path="/partenaire-eneo" element={<EneoPage />} />
             <Route path="/realisations" element={<GalleryPage />} />
             <Route path="/catalogue" element={<CatalogPage />} />
-            <Route path="/simulateur-devis" element={<QuotePage />} />
             <Route path="/contact" element={<ContactPage />} />
             {/* Fallback redirect */}
             <Route path="*" element={<HomePage />} />

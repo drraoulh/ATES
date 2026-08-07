@@ -38,7 +38,7 @@ export default function Contact() {
                 <div className="icon"><Phone size={24} /></div>
                 <div>
                   <h4>Téléphone / Urgence 24h/7d :</h4>
-                  <p><a href="tel:+237600000000">+237 600 000 000</a> / <a href="tel:+237670000000">+237 670 000 000</a></p>
+                  <p><a href="tel:+237677764773">+237 677 76 47 73</a></p>
                 </div>
               </div>
 
@@ -46,7 +46,7 @@ export default function Contact() {
                 <div className="icon"><i className="fa-brands fa-whatsapp text-green text-xl"></i></div>
                 <div>
                   <h4>WhatsApp Direct :</h4>
-                  <p><a href="https://wa.me/237600000000" target="_blank" rel="noopener noreferrer">+237 600 000 000 (Réponse rapide)</a></p>
+                  <p><a href="https://wa.me/237677764773" target="_blank" rel="noopener noreferrer">+237 677 76 47 73 (Réponse rapide)</a></p>
                 </div>
               </div>
 
@@ -62,7 +62,7 @@ export default function Contact() {
             <div className="social-links mt-4">
               <a href="#" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
               <a href="#" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
-              <a href="https://wa.me/237600000000" aria-label="WhatsApp"><i className="fa-brands fa-whatsapp"></i></a>
+              <a href="https://wa.me/237677764773" aria-label="WhatsApp"><i className="fa-brands fa-whatsapp"></i></a>
             </div>
           </div>
 
@@ -107,6 +107,7 @@ export default function Contact() {
                 <select value={formData.subject} onChange={e => setFormData({ ...formData, subject: e.target.value })}>
                   <option value="Haute Tension">Ligne Haute Tension / Poteaux</option>
                   <option value="Transformateur">Installation de Transformateur</option>
+                  <option value="BTP & Génie Civil">BTP & Génie Civil (Fondations, VRD, Cabines)</option>
                   <option value="Sous-traitance Eneo">Sous-traitance Eneo / Raccordement</option>
                   <option value="Achat Materiel">Achat de Câbles / Matériel</option>
                   <option value="Maintenance">Maintenance & Mesure de Terre</option>

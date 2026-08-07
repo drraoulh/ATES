@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-col brand-col">
             <img src="/assets/images/logo_ates.png" alt="ATES Logo" className="footer-logo" />
-            <p><strong>ATES</strong> - Société spécialisée dans les travaux d'électricité Haute Tension, pose de transformateurs, sous-traitance Eneo, vente de matériels et réseaux électriques au Cameroun.</p>
+            <p><strong>ATES</strong> - Société spécialisée dans les travaux d'électricité Haute Tension, pose de transformateurs, sous-traitance Eneo, Génie Civil & BTP, et vente de matériels électriques au Cameroun.</p>
             <div className="badge-partner">
               <Handshake size={16} /> Partenaire Agréé Eneo
             </div>
@@ -19,6 +19,7 @@ export default function Footer() {
             <ul>
               <li><a href="#services">Lignes Haute Tension (HTA/BT)</a></li>
               <li><a href="#services">Postes de Transformateurs</a></li>
+              <li><a href="#services">Génie Civil & BTP</a></li>
               <li><a href="#services">Sous-traitance Eneo & Branchements</a></li>
               <li><a href="#services">Maintenance & Mesures ES3000P</a></li>
               <li><a href="#services">Électricité Industrielle & Bâtiment</a></li>
@@ -39,13 +40,13 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Localisation & Contact</h4>
             <p><MapPin size={16} className="text-green inline-block" /> Douala 5e, Cameroun</p>
-            <p><Phone size={16} className="text-green inline-block" /> Urgence : +237 600 000 000</p>
+            <p><Phone size={16} className="text-green inline-block" /> Urgence : +237 677 76 47 73</p>
             <p><Mail size={16} className="text-green inline-block" /> contact@ates-cameroun.com</p>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2026 <strong>ATES</strong> - Tous droits réservés. Réalisé pour ATES Cameroun.</p>
+          <p>&copy; 2026 <strong>ATES</strong> - Tous droits réservés. Électricité Haute Tension & BTP Cameroun.</p>
           <div className="footer-bottom-links">
             <a href="#hero">Retour en haut <ArrowUp size={16} className="inline-block" /></a>
           </div>

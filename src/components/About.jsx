@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Award, Truck, Send } from 'lucide-react';
+import { ShieldCheck, Award, Truck, Send, HardHat } from 'lucide-react';
 
 export default function About() {
   return (
@@ -21,9 +21,12 @@ export default function About() {
 
           <div className="about-content">
             <span className="sub-title"><ShieldCheck size={16} /> À PROPOS DE L'ENTREPRISE ATES</span>
-            <h2>La Rigueur et l'Excellence Technique sur le Terrain</h2>
+            <h2>Électricité Haute Tension, BTP & Génie Civil au Cameroun</h2>
             <p>
-              <strong>ATES</strong> est un acteur majeur du secteur électrique au Cameroun. Forte d'une équipe de techniciens hautement qualifiés et équipés d'outillages de pointe (camions grues, harnais d'arrêt de chute, testeurs de terre ES3000P), ATES réalise des interventions de haute complexité dans le respect le plus strict des règles de l'art.
+              <strong>ATES</strong> est une entreprise de référence spécialisée dans l'électricité haute/moyenne tension, la sous-traitance Eneo et les travaux de <strong>BTP / Génie Civil</strong> au Cameroun.
+            </p>
+            <p className="mt-2 text-muted">
+              Forte d'une équipe pluridisciplinaire d'ingénieurs et techniciens du BTP et du génie électrique (camions grues, engins de terrassement, appareils de mesure de terre ES3000P), ATES prend en charge vos chantiers de la conception au gros œuvre jusqu'à la mise en service.
             </p>
 
             <div className="values-grid">
@@ -31,23 +34,23 @@ export default function About() {
                 <div className="val-icon"><ShieldCheck size={24} /></div>
                 <div>
                   <h4>Sécurité Zéro Incident</h4>
-                  <p>Briefings quotidiens et port obligatoire des EPI certifiés sur tous nos chantiers.</p>
+                  <p>Briefings quotidiens et port obligatoire des EPI certifiés sur tous nos chantiers d'électricité et de BTP.</p>
                 </div>
               </div>
 
               <div className="value-item">
-                <div className="val-icon"><Award size={24} /></div>
+                <div className="val-icon"><HardHat size={24} /></div>
                 <div>
-                  <h4>Matériaux Certifiés</h4>
-                  <p>Câbles, armements et transformateurs conformes aux exigences Eneo & NF C.</p>
+                  <h4>Génie Civil & BTP</h4>
+                  <p>Construction de cabines, massifs de fondation en béton armé, VRD et terrassement de précision.</p>
                 </div>
               </div>
 
               <div className="value-item">
                 <div className="val-icon"><Truck size={24} /></div>
                 <div>
-                  <h4>Capacité Logistique</h4>
-                  <p>Flotte de camions grues et matériel lourd pour l'implantation rapide de pylônes et poteaux.</p>
+                  <h4>Capacité Logistique & Engins</h4>
+                  <p>Flotte de camions grues et matériel lourd pour le levage de poteaux, pylônes et ouvrages de bâtiment.</p>
                 </div>
               </div>
             </div>
